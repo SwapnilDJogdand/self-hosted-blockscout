@@ -1,0 +1,20 @@
+http://localhost {
+    handle /api* {
+        reverse_proxy backend:4000
+    }
+    handle /socket* {
+        reverse_proxy backend:4000
+    }
+    handle /sitemap.xml {
+        reverse_proxy backend:4000
+    }
+    handle /auth* {
+        reverse_proxy backend:4000
+    }
+    handle /metrics {
+        reverse_proxy backend:4000
+    }
+    handle {
+        reverse_proxy bc_frontend:3000
+    }
+}
